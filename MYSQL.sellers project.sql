@@ -1,7 +1,7 @@
 -- CREATE DATABASE NAME.
 create database project1;
 
--- SELECT DATABSE.
+-- SELECT DATABASE.
 use project1;
 
 -- check TABLE SELLERS.
@@ -14,11 +14,11 @@ DROP COLUMN `MyUnknownColumn`;
 /* TOP STATE */
 SELECT user_state,
      SUM(TOTAL_VALUE) AS VALUE
-    ,SUM(TOTAL_qty) AS TOTAL_qty
-    ,SUM(Cancelled_Orders) As Cancel
+     ,SUM(TOTAL_qty) AS VALUE
+     ,SUM(Cancelled_Orders) AS Cancel
 FROM project1.sellers
-GROUP By user_state
-ORDER BY Total_qty desc;
+GROUP BY user_state
+ORDER BY Total_qty DESC;
 
 
 -- Find MAX and MIN  CREATED_AT IN SELLERS TABLE.
@@ -43,7 +43,7 @@ MIN(Cancelled_Orders) AS MIN_Cancel
 FROM project1.sellers GROUP BY user_city
 ORDER BY 2 DESC, 3 DESC;
 
--- CHECK HOW MANY PEPOLE REGISTER WITH APP AND WEBSITE with STATE WISE;
+-- CHECK HOW MANY PEOPLE REGISTER WITH APP AND WEBSITE with STATE WISE;
 
   SELECT COUNT(registered_from) AS Count_Register,
   user_state,registered_from FROM project1.sellers 
